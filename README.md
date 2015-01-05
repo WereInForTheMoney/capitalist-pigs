@@ -1,4 +1,4 @@
 capitalist-pigs
 ===============
 
-A financius-like app and backend infrastructure for handling personal financial accounts.
+An app and supporting backend infrastructure for handling personal financial accounts information.

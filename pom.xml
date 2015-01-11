@@ -24,4 +24,10 @@
         <module>frontend</module>
     </modules>
 
+    <profiles>
+        <profile>
+            <id>openshift</id>
+        </profile>
+    </profiles>
+
 </project>

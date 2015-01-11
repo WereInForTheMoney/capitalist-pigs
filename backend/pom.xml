@@ -49,6 +49,8 @@
                         <targetPath>WEB-INF</targetPath>
                         <filtering>true</filtering>
                     </webResources>
+                    <!-- Make sure the war has a consistent name-->
+                    <warName>backend</warName>
                 </configuration>
             </plugin>
         </plugins>

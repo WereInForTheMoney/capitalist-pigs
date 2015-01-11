@@ -45,9 +45,11 @@
                     so that they are not included in the classpath, to distinguish
                     from legitimate src/main/resources-->
                     <webResources>
-                        <resource>src/main/webResources</resource>
-                        <targetPath>WEB-INF</targetPath>
-                        <filtering>true</filtering>
+                        <resource>
+                            <directory>src/main/webResources</directory>
+                            <targetPath>WEB-INF</targetPath>
+                            <filtering>true</filtering>
+                        </resource>
                     </webResources>
                     <!-- Make sure the war has a consistent name-->
                     <warName>backend</warName>

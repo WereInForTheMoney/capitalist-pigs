@@ -2,16 +2,15 @@ package cat.wereinitforthemoney.capitalistpigs.backend.rest.endpoints;
 
 import cat.wereinitforthemoney.capitalistpigs.backend.model.User;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
  * @author loic
  */
 @Path("user")
+@Produces(MediaType.APPLICATION_JSON)
 public class UserEndpoint {
     @POST
     public Response createUser(User user){
@@ -21,11 +20,11 @@ public class UserEndpoint {
     @GET
     @Path("/{userId}")
     public Response getUser(@PathParam("userId")String userId) {
-        User u = new User();
-        u.setId(userId);
-        u.setName("lol");
-        u.setPassword("secretlol");
+        User user = new User();
+        user.setId(userId);
+        user.setName("lol");
+        user.setPassword("secretlol");
 
-        return Response.ok().entity(u).build(); 
+        return Response.ok().entity(user).build();
     }
 }

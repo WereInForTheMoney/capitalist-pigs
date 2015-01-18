@@ -1,0 +1,16 @@
+<ion-view view-title="Debts">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="debt in debts" type="item-text-wrap" href="#/tab/debts/{{debt.id}}">
+        <img ng-src="{{debt.face}}">
+        <h2>{{debt.name}}</h2>
+        <p>{{debt.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(debt)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

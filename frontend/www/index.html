@@ -16,11 +16,20 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
+    <script src="modules/__core/app.js"></script>
+
+    <script src="modules/dash/controllers/dash.js"></script>
+
+    <script src="modules/debts/factories/debt.js"></script>
+    <script src="modules/debts/controllers/debts.js"></script>
+
+    <script src="modules/settings/controllers/settings.js"></script>
+    
+    <script src="modules/transactions/factories/transaction.js"></script>
+    <script src="modules/transactions/controllers/transactions.js"></script>
   </head>
-  <body ng-app="starter">
+
+  <body ng-app="capitalistPigs">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->

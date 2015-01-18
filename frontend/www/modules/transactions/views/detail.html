@@ -1,0 +1,15 @@
+<!--
+This template loads for the 'tab.transaction-detail' state (app.js)
+'transaction' is a $scope variable created in the transactionsController controller (controllers.js)
+The transactionsController pulls data from the transactions service (service.js)
+The transactions service returns an array of transaction data
+-->
+<ion-view view-title="{{transaction.name}}">
+  <ion-content class="padding">
+    <img ng-src="{{transaction.face}}" style="width: 64px; height: 64px">
+    <h3>Notes</h3>
+    <p>
+      {{transaction.notes}}
+    </p>
+  </ion-content>
+</ion-view>

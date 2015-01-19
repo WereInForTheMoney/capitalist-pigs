@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('capitalistPigs.transactions', [])
+angular.module('capitalistPigs.transactions')
 
 /**
  * A simple example service that returns some data.

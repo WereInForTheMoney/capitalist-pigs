@@ -1,6 +1,6 @@
 'use strict';
 
 
-angular.module('capitalistPigs.dash', [])
+angular.module('capitalistPigs.dash')
 
 .controller('DashController', function( /*$scope*/ ) {});

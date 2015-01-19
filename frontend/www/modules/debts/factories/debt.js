@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('capitalistPigs.debts', [])
+angular.module('capitalistPigs.debts')
 
 .factory('Debts', function() {
   // Might use a resource here that returns a JSON array

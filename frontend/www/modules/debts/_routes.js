@@ -20,7 +20,7 @@ angular.module('capitalistPigs')
         }
       }
     })
-    .state('tab.debtDetail', {
+    .state('tab.debt', {
       url: '/debts/:debtId',
       views: {
         'tab-debts': {

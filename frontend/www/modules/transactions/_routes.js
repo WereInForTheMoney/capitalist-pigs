@@ -20,7 +20,7 @@ angular.module('capitalistPigs')
         }
       }
     })
-    .state('tab.transactionDetail', {
+    .state('tab.transaction', {
       url: '/transaction/:transactionId',
       views: {
         'tab-transactions': {

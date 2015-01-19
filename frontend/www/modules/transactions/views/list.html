@@ -1,10 +1,15 @@
 <ion-view view-title="Transactions">
     <ion-content>
         <ion-list>
-            <ion-item class="item-avatar" ng-repeat="transaction in transactions" type="item-text-wrap" href="#/tab/transaction/{{transaction.id}}">
+            <ion-item class="item-avatar" ng-repeat="transaction in transactions" type="item-text-wrap" ui-sref="tab.transaction({transactionId:transaction.id})">
                 <img ng-src="{{transaction.face}}">
                 <h2>{{transaction.name}}</h2>
             </ion-item>
         </ion-list>
+
     </ion-content>
+
+    <div class="bar bar-footer">
+        <button class="button button-block button-dark">Add</button>
+    </div>
 </ion-view>

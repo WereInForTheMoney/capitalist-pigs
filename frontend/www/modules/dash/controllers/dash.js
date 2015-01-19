@@ -3,4 +3,4 @@
 
 angular.module('capitalistPigs.dash', [])
 
-.controller('DashController', function(/*$scope*/) {});
+.controller('DashController', function( /*$scope*/ ) {});

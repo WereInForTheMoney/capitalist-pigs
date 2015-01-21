@@ -4,3 +4,4 @@ target
 out
 frontend/engine/
 npm-debug.log
+frontend/www/lib/

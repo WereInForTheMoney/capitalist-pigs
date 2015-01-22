@@ -1,0 +1,116 @@
+{
+    "Description": "Complete Amazon WS Infrastructure deployment description for both back and frontend of Capitalist Pigs",
+
+    "AWSTemplateFormatVersion": "2010-09-09",
+
+    "Mappings": {
+        "DebianAMIs": {
+            "ap-northeast-1": {
+                "Wheezy77basei386paravirtualebs": "ami-970b3a96",
+                "Wheezy77basex8664hvmebs": "ami-97f1c096",
+                "Wheezy77basex8664paravirtualebs": "ami-0f0f3e0e",
+                "Wheezy77basex8664paravirtualinstancestore": "ami-21f6c720"
+            },
+            "ap-southeast-1": {
+                "Wheezy77basei386paravirtualebs": "ami-4e20011c",
+                "Wheezy77basex8664hvmebs": "ami-d822038a",
+                "Wheezy77basex8664paravirtualebs": "ami-70220322",
+                "Wheezy77basex8664paravirtualinstancestore": "ami-24240576"
+            },
+            "ap-southeast-2": {
+                "Wheezy77basei386paravirtualebs": "ami-0185e83b",
+                "Wheezy77basex8664hvmebs": "ami-ed87ead7",
+                "Wheezy77basex8664paravirtualebs": "ami-bd87ea87",
+                "Wheezy77basex8664paravirtualinstancestore": "ami-e386ebd9"
+            },
+            "eu-west-1": {
+                "Wheezy77basei386paravirtualebs": "ami-c664cbb1",
+                "Wheezy77basex8664hvmebs": "ami-e261ce95",
+                "Wheezy77basex8664paravirtualebs": "ami-9c62cdeb",
+                "Wheezy77basex8664paravirtualinstancestore": "ami-187fd06f"
+            },
+            "sa-east-1": {
+                "Wheezy77basei386paravirtualebs": "ami-3f7dc922",
+                "Wheezy77basex8664hvmebs": "ami-fd7dc9e0",
+                "Wheezy77basex8664paravirtualebs": "ami-a97dc9b4",
+                "Wheezy77basex8664paravirtualinstancestore": "ami-417eca5c"
+            },
+            "us-east-1": {
+                "Wheezy77basei386paravirtualebs": "ami-0258e26a",
+                "Wheezy77basex8664hvmebs": "ami-a458e2cc",
+                "Wheezy77basex8664paravirtualebs": "ami-2058e248",
+                "Wheezy77basex8664paravirtualinstancestore": "ami-bc4af0d4"
+            },
+            "us-west-1": {
+                "Wheezy77basei386paravirtualebs": "ami-c53d2880",
+                "Wheezy77basex8664hvmebs": "ami-6f3f2a2a",
+                "Wheezy77basex8664paravirtualebs": "ami-893c29cc",
+                "Wheezy77basex8664paravirtualinstancestore": "ami-4b3e2b0e"
+            },
+            "us-west-2": {
+                "Wheezy77basei386paravirtualebs": "ami-677e3157",
+                "Wheezy77basex8664hvmebs": "ami-af7b349f",
+                "Wheezy77basex8664paravirtualebs": "ami-df7c33ef",
+                "Wheezy77basex8664paravirtualinstancestore": "ami-ff7a35cf"
+            }
+        }
+    },
+
+    "Parameters": {},
+
+    "Resources": {
+        "FrontendServer":{
+            "Type" : "AWS::EC2::Instance",
+            "Properties":{
+                "ImageId":{
+                    "Fn::FindInMap": [ "DebianAMIs", { "Ref": "AWS::Region" }, "Wheezy77basex8664hvmebs" ]
+                },
+                "InstanceType":"t2.small",
+                "KeyName":"httpservices",
+                "SecurityGroups":[{ "Ref" : "HttpServicesSecurityGroup" }]
+            }
+        },
+        "BackendServer":{
+            "Type" : "AWS::EC2::Instance",
+            "Properties":{
+                "ImageId":{
+                    "Fn::FindInMap": [ "DebianAMIs", { "Ref": "AWS::Region" }, "Wheezy77basex8664hvmebs" ]
+                },
+                "InstanceType":"t2.small",
+                "KeyName":"httpservices",
+                "SecurityGroups":[{ "Ref" : "HttpServicesSecurityGroup" }]
+            }
+        },
+
+        "HttpServicesSecurityGroup" : {
+            "Type" : "AWS::EC2::SecurityGroup",
+            "Properties" : {
+                "GroupDescription" : "Http and ssh ports open to public",
+                "SecurityGroupIngress" : [
+                    {
+                        "IpProtocol" : "tcp",
+                        "FromPort" : "80",
+                        "ToPort" : "80",
+                        "CidrIp" : "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol" : "tcp",
+                        "FromPort" : "8080",
+                        "ToPort" : "8080",
+                        "CidrIp" : "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol" : "tcp",
+                        "FromPort" : "22",
+                        "ToPort" : "22",
+                        "CidrIp" : "0.0.0.0/0"
+                    }
+                ]
+            }
+        }
+    },
+
+    "Outputs": {}
+
+}
+

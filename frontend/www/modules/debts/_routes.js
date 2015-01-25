@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('capitalistPigs')
+angular.module('capitalistPigs.debts')
 
 .config(function($stateProvider) {
 
@@ -16,16 +16,16 @@ angular.module('capitalistPigs')
       views: {
         'tab-debts': {
           templateUrl: 'modules/debts/views/list.html',
-          controller: 'DebtListController'
+          controller: 'DebtListController as debt'
         }
       }
     })
     .state('tab.debt', {
-      url: '/debts/:debtId',
+      url: '/debt/:debtId',
       views: {
         'tab-debts': {
-          templateUrl: 'modules/debts/views/detail.html',
-          controller: 'DebtDetailController'
+          templateUrl: 'modules/debts/views/form.html',
+          controller: 'DebtDetailController as debt'
         }
       }
     });

@@ -8,6 +8,7 @@ angular
 
     'pascalprecht.translate',
 
+    'capitalistPigs.categories',
     'capitalistPigs.dash',
     'capitalistPigs.debts',
     'capitalistPigs.nav',

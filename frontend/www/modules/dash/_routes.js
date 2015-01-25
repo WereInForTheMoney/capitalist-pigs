@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('capitalistPigs')
+angular.module('capitalistPigs.dash')
 
 .config(function($stateProvider) {
 

@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('capitalistPigs')
+angular.module('capitalistPigs.transactions')
 
 .config(function($stateProvider) {
 

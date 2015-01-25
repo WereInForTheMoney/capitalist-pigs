@@ -1,16 +1,29 @@
 {
-  "dash.tab":"Inici",
-  "dash.title":"Inici",
+
+  "buttons.add": "Nou",
+  "buttons.save": "Desa",
 
 
-  "debts.tab":"Deutes",
-  "debts.title":"Deutes",
+  "category.name": "Categoria",
 
 
-  "settings.tab":"Configuració",
-  "settings.title":"Configuració",
+  "dash.tab": "Inici",
+  "dash.title": "Inici",
 
 
-  "transactions.tab":"Moviments",
-  "transactions.title":"Moviments"
+  "debts.tab": "Deutes",
+  "debts.title": "Deutes",
+  "debts.quantity": "Quantitat",
+  "debts.comment": "Comentari",
+
+
+  "settings.tab": "Configuració",
+  "settings.title": "Configuració",
+
+
+  "transactions.tab": "Moviments",
+  "transactions.title": "Moviments",
+
+
+  "user.name": "Nom"
 }

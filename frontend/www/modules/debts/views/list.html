@@ -1,16 +1,20 @@
 <ion-view view-title="{{'debts.title' | translate}}">
     <ion-content>
         <ion-list>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="debt in debts" type="item-text-wrap" ui-sref="tab.debt({debtId:debt.id})">
-                <img ng-src="{{debt.face}}">
-                <h2>{{debt.name}}</h2>
-                <p>{{debt.lastText}}</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in debt.debts" type="item-text-wrap" ui-sref="tab.debt({debtId:item.id})">
+                <category-icon color="1" icon="ticket" class="item-image"></category-icon>
+                <h2>{{item.user}}</h2>
+                <p>{{item.quantity | currency}}</p>
+                <!-- <i class="icon ion-chevron-right icon-accessory"></i> -->
 
-                <ion-option-button class="button-assertive" ng-click="remove(debt)">
+                <ion-option-button class="button-assertive" ng-click="remove(item)">
                     Delete
                 </ion-option-button>
             </ion-item>
         </ion-list>
     </ion-content>
+
+    <div class="bar bar-footer">
+        <button class="button button-block button-dark" ui-sref="tab.debt" translate>buttons.add</button>
+    </div>
 </ion-view>

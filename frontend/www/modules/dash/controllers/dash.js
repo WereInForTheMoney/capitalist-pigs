@@ -1,6 +1,15 @@
 'use strict';
 
 
-angular.module('capitalistPigs.dash')
+angular
+  .module('capitalistPigs.dash')
 
-.controller('DashController', function( /*$scope*/ ) {});
+.controller('DashController', function(
+  Categories
+) {
+
+  Categories.findAll().then(function(data) {
+    console.log(data);
+  });
+  // Categories.all();
+});

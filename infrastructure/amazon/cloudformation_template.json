@@ -59,17 +59,6 @@
     "Parameters": {},
 
     "Resources": {
-        "FrontendServer":{
-            "Type" : "AWS::EC2::Instance",
-            "Properties":{
-                "ImageId":{
-                    "Fn::FindInMap": [ "DebianAMIs", { "Ref": "AWS::Region" }, "Wheezy77basex8664hvmebs" ]
-                },
-                "InstanceType":"t2.small",
-                "KeyName":"httpservices",
-                "SecurityGroups":[{ "Ref" : "HttpServicesSecurityGroup" }]
-            }
-        },
         "BackendServer":{
             "Type" : "AWS::EC2::Instance",
             "Properties":{

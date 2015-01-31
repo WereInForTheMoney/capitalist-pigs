@@ -6,6 +6,7 @@ An app and supporting backend infrastructure for handling personal financial acc
 #Backend
 Spring based backend services, that both provide a REST api for clients to use and periodic operations to perform
 on schedule.
+The application is deployed to a Tomcat server, so Jersey libraries are used for the REST service
 
 #Frontend
 

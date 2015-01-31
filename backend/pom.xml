@@ -15,6 +15,7 @@
 
     <properties>
         <versions.jersey>2.15</versions.jersey>
+        <package.warname>cpigs-backend-${project.version}</package.warname>
     </properties>
 
     <dependencies>
@@ -38,8 +39,6 @@
             <version>${versions.jersey}</version>
         </dependency>
 
-
-
     </dependencies>
 
     <build>
@@ -62,11 +61,31 @@
                         </resource>
                     </webResources>
                     <!-- Make sure the war has a consistent name-->
-                    <warName>cpigs-backend-${project.version}</warName>
+                    <warName>${package.warname}</warName>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <!-- The profile to use while developing on local -->
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <package.warname>cpigs-backend-${project.version}</package.warname>
+            </properties>
+        </profile>
+        <!-- The profile to use for deploying to an amazon EC2 instance -->
+        <profile>
+            <id>amazon</id>
+            <properties>
+                <package.warname>backend</package.warname>
+            </properties>
+        </profile>
+    </profiles>
 
 
 </project>

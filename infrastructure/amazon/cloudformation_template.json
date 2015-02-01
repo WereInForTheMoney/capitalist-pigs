@@ -9,7 +9,7 @@
         "BackendServer":{
             "Type" : "AWS::EC2::Instance",
             "Properties":{
-                "ImageId":"ami-ff84dccf",
+                "ImageId":"ami-cff8a0ff",
                 "InstanceType":"t2.small",
                 "KeyName":"httpservices",
                 "SecurityGroups":[{ "Ref" : "HttpServicesSecurityGroup" }]
@@ -19,7 +19,7 @@
         "HttpServicesSecurityGroup" : {
             "Type" : "AWS::EC2::SecurityGroup",
             "Properties" : {
-                "GroupDescription" : "Http and ssh ports open to public",
+                "GroupDescription" : "Http,ftp and ssh ports open to public for Tomcat(8080),Nignx(80),jenkins(8081),SSH(22) and FTP(21)",
                 "SecurityGroupIngress" : [
                     {
                         "IpProtocol" : "tcp",
@@ -35,8 +35,20 @@
                     },
                     {
                         "IpProtocol" : "tcp",
+                        "FromPort" : "8081",
+                        "ToPort" : "8081",
+                        "CidrIp" : "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol" : "tcp",
                         "FromPort" : "22",
                         "ToPort" : "22",
+                        "CidrIp" : "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol" : "tcp",
+                        "FromPort" : "21",
+                        "ToPort" : "21",
                         "CidrIp" : "0.0.0.0/0"
                     }
                 ]
